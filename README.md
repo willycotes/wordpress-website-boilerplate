@@ -11,7 +11,7 @@
 1. Definir el .env file con los valores correspondientes para nuestro entorno, utilizando como ejemplo el archivo ".env.sample".
 1. Generar el .htaccess archivo en el root ejecutando el archivo generate-htaccess.php.
 1. Ejecutar npm install y composer install para instalar todas las dependencias.
-1. Generar el .htaccess de la instalación de wordpress en wordpress-core/ con la herramienta WP_CLI ejecutando el comando "wp rewrite reflush --hard". **Más detalles abajo.**
+1. Generar el .htaccess de la instalación de wordpress en wordpress-core/ con la herramienta WP_CLI ejecutando el comando "wp rewrite flush --hard". **Más detalles abajo.**
 
 ## Archivo de configuración de wordpress.
 
