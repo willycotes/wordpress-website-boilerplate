@@ -1,255 +1,51 @@
-# wpcotestheme.com web site
+<div align="center">
+	<p align="center"><img src="/wp-content/git/logos/logo-brandketings.png"></p>
+	<h1>Brandketing Solutions Website</h1>
+	<p>Website of Brandketing Solutions, made with Wordpress CMS and development by <a href="https://willycotes.github.io/willydev.com/">Willy Cotes</a> and teams.</p>
+	<br/>
+</div>
 
-## Templates files
+## Pasos para iniciar el proyecto:
 
-- index.php
+1. Clonar el repositorio y submodulos con "git clone recursive https://github.com/Brandketings/brandketings.com.git"
+1. Definir el .env file con los valores correspondientes para nuestro entorno, utilizando como ejemplo el archivo ".env.sample".
+1. Generar el .htaccess archivo en el root ejecutando el archivo generate-htaccess.php.
+1. Ejecutar npm install y composer install para instalar todas las dependencias.
+1. Generar el .htaccess de la instalación de wordpress en wordpress-core/ con la herramienta WP_CLI ejecutando el comando "wp rewrite reflush --hard". **Más detalles abajo.**
 
-      body.body_class()
-        do_action('body_open')
-        do_action('wpcotestheme_before_site')
-        div#page.site
-          div.message-bar
-          do_action('wpcotestheme_before_header')
-          header#masthead.site-header
-            button.menu-toggle[hidden]
-            div.site-branding
-            div.search-form[role="search"]
-            div.header-links
-            do_action('wpcotestheme_header')
-          nav#primary-navigation.site-navigation[role="navigation"]
-          div#navigation-panel.navigation-panel
-          do_action('wpcotestheme_before_content')
-          div#content.site-content
-            div#primary.content-area
-              main#main.site-main[role="main"]
-                if have posts
-                do_action('wpcotestheme_before_loop')
-                // loop
-                article#post-${ the_ID() }.post_class()
-                  do_action('wpcotestheme_loop_top')
-                  header.entry-header
-                  div.entry-content
-                  footer.entry-footer
-                  do_action('wpcotestheme_loop')
-                  do_action(wpcotestheme_loop_bottom')
-                do_action('wpcotestheme_after_loop')
-            div#secondary.widget-area
-              aside#sidebar.site-sidebar[role="complementary"]
-          do_action('wpcotestheme_before_footer')
-          footer#footer.site-footer[role="contentinfo"]
-            do_action('wpcotestheme_footer')
-          do_action('wpcotestheme_after_footer')
+## Archivo de configuración de wordpress.
 
-- single.php
+Esta instalación contiene una clase de configuracion personalizada, el cual, maneja las definiciones de las constantes del wp-config.php de wordpress a traves de variables de entornos utilizando dotenv como dependencia, incluyendo el archivo específico según el entorno en el que estemos.
 
-      body.body_class()
-        do_action('body_open')
-        do_action('wpcotestheme_before_site')
-        div#page.site
-          div.message-bar
-          do_action('wpcotestheme_before_header')
-          header#masthead.site-header
-            button.menu-toggle[hidden]
-            div.site-branding
-            div.search-form[role="search"]
-            div.header-links
-            do_action('wpcotestheme_header')
-          nav#primary-navigation.site-navigation[role="navigation"]
-          div#navigation-panel.navigation-panel
-          do_action('wpcotestheme_before_content')
-          div#content.site-content
-            div#primary.content-area
-              main#main.site-main[role="main"]
-                if have posts
-                do_action('wpcotestheme_before_loop')
-                // loop
-                article#post-${ the_ID() }.post_class()
-                  do_action('wpcotestheme_single_loop_top')
-                  header.entry-header
-                  div.entry-content
-                  footer.entry-footer
-                  do_action('wpcotestheme_single_loop')
-                  do_action('wpcotestheme_single_loop_bottom')
-                do_action('wpcotestheme_after_loop')
-            div#secondary.widget-area
-              aside#sidebar.site-sidebar[role="complementary"]
-          do_action('wpcotestheme_before_footer')
-          footer#footer.site-footer[role="contentinfo"]
-            do_action('wpcotestheme_footer')
-          do_action('wpcotestheme_after_footer')
+## WP CLI
 
-- page.php
+Para utilizar correctamente la herramienta WP-CLI sobre este proyecto, se debe de crear el archivo de configuracion "wp-cli.yml" de la siguiente manera:
 
-      body.body_class()
-        do_action('body_open')
-        do_action('wpcotestheme_before_site')
-        div#page.site
-          div.message-bar
-          do_action('wpcotestheme_before_header')
-          header#masthead.site-header
-            button.menu-toggle[hidden]
-            div.site-branding
-            div.search-form[role="search"]
-            div.header-links
-            do_action('wpcotestheme_header')
-          nav#primary-navigation.site-navigation[role="navigation"]
-          div#navigation-panel.navigation-panel
-          do_action('wpcotestheme_before_content')
-          div#content.site-content
-            div#primary.content-area
-              main#main.site-main[role="main"]
-                if have posts
-                do_action('wpcotestheme_before_loop')
-                // loop
-                article#page-${ the_ID() }.post_class()
-                  do_action('wpcotestheme_page_loop_top')
-                  header.entry-header
-                  div.entry-content
-                  footer.entry-footer
-                  do_action('wpcotestheme_page_loop')
-                  do_action('wpcotestheme_page_loop_bottom')
-                do_action('wpcotestheme_after_loop')
-            div#secondary.widget-area
-              aside#sidebar.site-sidebar[role="complementary"]
-          do_action('wpcotestheme_before_footer')
-          footer#footer.site-footer[role="contentinfo"]
-            do_action('wpcotestheme_footer')
-          do_action('wpcotestheme_after_footer')
+    apache_modules:
+      - mod_rewrite
 
-- frontpage.php
+    path: wordpress-core/
 
-      body.body_class()
-        do_action('body_open')
-        do_action('wpcotestheme_before_site')
-        div#page.site
-          div.message-bar
-          do_action('wpcotestheme_before_header')
-          header#masthead.site-header
-            button.menu-toggle[hidden]
-            div.site-branding
-            div.search-form[role="search"]
-            div.header-links
-            do_action('wpcotestheme_header')
-          nav#primary-navigation.site-navigation[role="navigation"]
-          div#navigation-panel.navigation-panel
-          do_action('wpcotestheme_before_content')
-          div#content.site-content
-            div#primary.content-area
-              main#main.site-main[role="main"]
-                if have posts
-                do_action('wpcotestheme_before_loop')
-                // loop
-                div#page-${ the_ID() }.post_class()
-                  do_action('wpcotestheme_frontpage_loop_top')
-                  header.entry-header
-                  article.entry-content
-                  footer.entry-footer
-                  do_action('wpcotestheme_frontpage_loop')
-                  do_action('wpcotestheme_frontpage_loop_bottom')
-                do_action('wpcotestheme_after_loop)
-            div#secondary.widget-area
-              aside#sidebar.site-sidebar[role="complementary"]
-          do_action('wpcotestheme_before_footer')
-          footer#footer.site-footer[role="contentinfo"]
-            do_action('wpcotestheme_footer')
-          do_action('wpcotestheme_after_footer')
+    @staging:
+      ssh: user@host/path/to/WordPress
+      path: wordpress-core/
 
-- homepage.php
+    @production:
+      ssh: u989690031@156.67.72.1:65002~/domains/brandketings.com/public_html/
 
-      body.body_class()
-        do_action('body_open')
-        do_action('wpcotestheme_before_site')
-        div#page.site
-          div.message-bar
-          do_action('wpcotestheme_before_header')
-          header#masthead.site-header
-            button.menu-toggle[hidden]
-            div.site-branding
-            div.search-form[role="search"]
-            div.header-links
-            do_action('wpcotestheme_header')
-          nav#primary-navigation.site-navigation[role="navigation"]
-          div#navigation-panel.navigation-panel
-          do_action('wpcotestheme_before_content')
-          div#content.site-content
-            div#primary.content-area
-              main#main.site-main[role="main"]
-                if have posts
-                header.homepage-header
-                do_action('wpcotestheme_homepage_before_loop')
-                // loop require excerpt standard default
-                article#post-${ the_ID() }.post_class()
-                  do_action('wpcotestheme_post_loop_top')
-                  header.entry-header
-                  div.entry-content
-                  footer.entry-footer
-                  do_action('wpcotestheme_post_loop')
-                  do_action('wpcotestheme_post_loop_bottom')
-                do_action('wpcotestheme_homepage_after_loop')
-            div#secondary.widget-area
-              aside#sidebar.site-sidebar[role="complementary"]
-          do_action('wpcotestheme_before_footer')
-          footer#footer.site-footer[role="contentinfo"]
-            do_action('wpcotestheme_footer')
-          do_action('wpcotestheme_after_footer')
+1.  La opción "apache_modules" se configura para hacer posible la regeneraración del archivo .htaccess de wordpress-core con WP-CLI a traves del comando "wp rewrite reflush --hard".
+2.  Indicamos la ruta la instalación de wordpress, en este caso es "wordpress-core/".
+3.  Luego configuramos varios alias que corresponden a cada entorno que queremos que apunten nuestros comandos de WP_CLI.
 
-- archive.php
+**Sintaxis:**
 
-      body.body_class()
-        do_action('body_open')
-        do_action('wpcotestheme_before_site')
-        div#page.site
-          div.message-bar
-          do_action('wpcotestheme_before_header')
-          header#masthead.site-header
-            button.menu-toggle[hidden]
-            div.site-branding
-            div.search-form[role="search"]
-            div.header-links
-            do_action('wpcotestheme_header')
-          nav#primary-navigation.site-navigation[role="navigation"]
-          div#navigation-panel.navigation-panel
-          do_action('wpcotestheme_before_content')
-          div#content.site-content
-            div#primary.content-area
-              main#main.site-main[role="main"]
-                if have posts
-                do_action('wpcotestheme_archive_header_before')
-                header.archive-header
-                do_action('wpcotestheme_before_loop')
-                // loop
-                article#page-${ the_ID() }.post_class()
-                  do_action('wpcotestheme_homepage_loop_top')
-                  header.entry-header
-                  div.entry-content
-                  footer.entry-footer
-                  do_action('wpcotestheme_homepage_loop')
-                  do_action('wpcotestheme_homepage_loop_bottom')
-                do_action('wpcotestheme_after_loop')
-            div#secondary.widget-area
-              aside#sidebar.site-sidebar[role="complementary"]
-          do_action('wpcotestheme_before_footer')
-          footer#footer.site-footer[role="contentinfo"]
-            do_action('wpcotestheme_footer')
-          do_action('wpcotestheme_after_footer')
+    // wp-cli.yml
+    @alias:
+    ssh: user@host/path/to/WordPress
 
-Debemos configurar el .env file con los valores correspondientes para nuestro entorno y generar el .htaccess file de la raiz con un comando de composer que ejecuta una clase PHP que es la encargada de crearlo, este archivo estara en el .gitignore ya que es independiente de cada sitio. Una vez creado, no se puede volver a generar para no reemplazar cambios que le hagamos a este, para volver a generarlo debemos eliminarlo primero.
+**Ejemplo:**
 
-wp-cli configuration environment
-
-Se define la constante WP_ENVIRONMENT_TYPE dentro de la clase de configuracion.
-
-Using 'defined()' function do why Local, Flywheel, and WP Engine is pre-pending the WP_ENVIRONMENT_TYPE constant and setting it to local
-
-Para apuntar a entornos especificos con wp-cli, lo manejamos creando un alias en la configuracion de wp-cli.yml de esta forma:
-
-// wp-cli.yml
-@alias:
-ssh: user@host/path/to/WordPress
-
-De esta forma creamos un alias para nuestro entornos. Ejemplo:
-// wp-cli.yml
-
+    // wp-cli.yml
     @production:
       ssh: user@host/path/to/WordPress
 
@@ -262,39 +58,30 @@ Luego ejecutamos los comandos de esta forma:
 
     $ wp @development plugin activate woocommerce
 
-Para el entorno local no es necesario que le agreguemos un alias, ya que por defecto apuntará a éste.
+**Para el entorno _local_ no es necesario que le agreguemos un alias, ya que por defecto apuntará a éste.**
 
-Activando certificado SSL
-Crear con Local by flywheel un nuevo site llamado "localhost" para que se cree un certificado que apunte a localhost y luego agrego las rutas a la configuracion de browsersync:
-https: {
-key: 'C:/Users/Usuario/AppData/Roaming/Local/run/router/nginx/certs/localhost.key',
-cert: 'C:/Users/Usuario/AppData/Roaming/Local/run/router/nginx/certs/localhost.crt'
-}
+## Activando certificado SSL en local.
 
-Un paso adicional sería la opción en Chrome para Permitir certificados no válidos para los recursos cargados desde localhost.
+Utilizamos la herramienta "Local by flywheel" y creamos un nuevo site llamado "localhost" para que se cree un certificado que apunte a localhost y luego agrego las rutas de estos certificados a las opciones del proxy de "browsersync" o cualquier herramienta que utilicemos para ejecutar un host local con hot reload:
+
+    https: {
+      key: 'C:/Users/Usuario/AppData/Roaming/Local/run/router/nginx/certs/localhost.key',
+      cert: 'C:/Users/Usuario/AppData/Roaming/Local/run/router/nginx/certs/localhost.crt'
+    }
+
+Un paso adicional sería la opción en Chrome para permitir certificados no válidos para los recursos cargados desde localhost.
+
 Para habilitar esto, péguelo en su barra de direcciones: chrome://flags/#allow-insecure-localhost y habilite la primera opción.
 
-actualiza el core de wordpress mediante git
-git fetch --tags
-git checkout 3.5.1
+## Actualización de Wordpress.
 
-Hacer push deploy ignorando el wp-config.php
+En este proyecto se trabaja la instalación de wordpress como **submódulo**, por ende para actualizarlo utilizamos comandos de git:
 
-Al clonar el repositorio debemos ejecutar la bandera --recursive para que se descargue el core de wordpress que esta instalado como submodule.
-Luego generar el htaccess de la raiz con el comando:
-composer run-script generate:htaccess
-o
-npm run generate:htaccess
-Para finalizar, nos faltaria crear el htaccess del core de wordpress, el cual, lo generamos a travez de la linea de comandos de wordpress
-wp rewrite flush --hard
-listo!
-configurar git
-git config --global core.autocrlf true
+    	cd wordpress-core
+    git fetch --tags
+    git checkout 3.5.1
 
-### enlaces sobre git flows
-
-- [git flow](https://nvie.com/posts/a-successful-git-branching-model/)
--
+## Trabajando con git flows
 
 Las siguientes ramas al crearlas se deben nombran con el numero de versión a implementar de la siguiente manera:
 
@@ -314,34 +101,41 @@ Si usamos git-flow y publicamos un release, debemos publicar los tags en el repo
 
 La ramas feature se hace merge solo con la rama develop, asi si hay una rama release abierta, la funcionalidad debe esperar a su debido proceso para el proximo release, ya que antes de crear el release se analizo que ya era el momento de crearse ese lanzamiento con las funciones que ya estaban listas.
 
+### Recursos:
+
+- [git flow](https://nvie.com/posts/a-successful-git-branching-model/)
+
+## Deploy with github actions.
+
 Deploy with github actions with ssh connection using [appleboy/ssh-action@master](https://github.com/appleboy/ssh-action) package.
-See [video tutorial](https://www.youtube.com/watch?v=gW1TDirJ5E4) for more information.
+**See [video tutorial](https://www.youtube.com/watch?v=gW1TDirJ5E4) for more information.**
+
 Using github secrets for save information confidential server connection and use in configuration file actions workflow with yamel sintaxis.
 
-### Secuencia de fin de línea
+## Configuración de secuencia de fin de línea.
 
 Los sistemas Unix como Linux y macOS usan LF, el carácter de avance de línea, para los saltos de línea de forma predeterminada. Windows, por otro lado, es especial y usa CR/LF, de forma predeterminada, el carácter de retorno de carro Y avance de línea.
 Para evitar problemas se debe cambiar todo su código al valor predeterminado de Unix de LF.
 
 Configuración de VSCode de manera global para LF
 
-      {
-          "files.eol": "\n",
-      }
+    {
+      "files.eol": "\n",
+    }
 
 Para convertir todos los archivos de crlf a lf ejecutar:
 
-      git config core.autocrlf false
-      git rm --cached -r .
-      git reset --hard
+    git config core.autocrlf false
+    git rm --cached -r .
+    git reset --hard
 
 Si tiene un entorno de desarrollo Node.js e prettier instalado, una forma de reemplazar todo CRLF por LF es ejecutarlo prettier --end-of-line lf --write en la línea de comando.
 
-Otra forma es establecer la endOfLine opción lfen el .prettierrc archivo de configuración y colocar una secuencia de comandos en su package.json gusto, así:
+Otra forma es establecer la endOfLine opción lf en el .prettierrc archivo de configuración y colocar una secuencia de comandos en su package.json gusto, así:
 
-    	"scripts": {
-    		"format": "prettier --end-of-line lf --write"
-    	}
+    "scripts": {
+      "format": "prettier --end-of-line lf --write"
+    }
 
 Cuando estaba lidiando con un proyecto complejo con algunos submódulos, los submódulos siempre se ensucian después de configurarlos de forma independiente. Esto es muy común pero causa que todo el git esté sucio y feo.
 Para resolver este problema edite el submodulo especifico en el .gitsubmodules file y agregue la linea "ignore = dirty".
@@ -354,22 +148,38 @@ Configurar indentacion en vscode a solo tabs de 2 espacios.
 - "editor.detectIndentation": false, permite que la configuración del ancho de un tabs ("editor.tabSize": 2) tenga efecto.
 - "editor.insertSpaces": false, desactiva el uso de espacios para la indentación. De esta manera sólo queda configurado el uso de tabs, evitando así muchos errores en los linter configurados por tabulación, el cual marcarian error si detecta que se tabulo con espacio. Ejemplo phpcs wordpress standard.
 
+## Configuracion de phpcs
+
 Instalamos las siguientes dependencias:
 
 - squizlabs/php_codesniffer: phpcs
 - wp-coding-standards/wpcs: wordpress phpcs standard
 - dealerdirect/phpcodesniffer-composer-installer: plugins que conecta todos los "phpcs code standard" instalados en la configuración de phpcs local automáticamente.
 
-### Configuracion de phpcs
-
 Para que phpcs pueda funcionar bien en el proyecto, agregamos la siguiente configuración local en vscode.
 
-    	{
-    		"phpcs.enable": true,
-    		"phpcs.standard": "WordPress",
-    		"phpcs.executablePath": "vendor/squizlabs/php_codesniffer/bin/phpcs"
-    	}
+    {
+      "phpcs.enable": true,
+      "phpcs.standard": "WordPress",
+      "phpcs.executablePath": "vendor/squizlabs/php_codesniffer/bin/phpcs"
+    }
 
---------------
+### Plugins install page standard
 
+wp plugin install autoptimize query-monitor wordpress-seo mailchimp-for-wp ultimate-addons-for-gutenberg --activate
+
+- Custom Plugins: wdvp-whatsapp-button google-analytics-and-pixel-facebook
+
+#### Plugins install page woocommerce
+
+wp plugin install woocommerce woocommerce-pdf-invoices-packing-slips nextend-facebook-connect facebook-for-woocommerce woo-product-feed-pro woo-variation-swatches woo-variation-gallery woocommerce-paypal-payments mailchimp-for-woocommerce ajax-search-for-woocommerce --activate
+
+#### Plugins premiun install page woocommerce
+
+wp plugin install show-single-variations-premium woo-variation-swatches-pro --activate
+
+- Custom Plugins: wdvp-panama-shipping-zone wdvp-enable-gutenberg-woocommerce
+- Plugin outside: plugin-yappi
+
+--------------------------
 Para crear un nuevo sitio web en wordpress, clonamos de manera recursiva el repositorio [wordpress-website-boilerplate](https://github.com/willycotes/wordpress-website-boilerplate.git) dentro de la carpeta vacia de nuestro proyecto, luego cambiamos la url remota origin por la url del nuevo repositorio de git de nuestro proyecto web que vayamos a desarrollar, a partir de allí, terminamos las configuraciones y empezamos a desarrollar.
