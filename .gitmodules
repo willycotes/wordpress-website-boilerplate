@@ -5,6 +5,6 @@
 [submodule "wp-content/themes/wpcotestheme"]
 	path = wp-content/themes/wpcotestheme
 	url = https://github.com/willycotes/wpcotestheme.git
-[submodule "wp-website-boilerplate-includes"]
+[submodule "willycotes/wp-website-boilerplate-includes"]
 	path = includes
-	url = https://github.com/willycotes/wp-website-boilerplate-includes.git
+	url = https://github.com/willycotes/wp-website-boilerplate-inc.git
