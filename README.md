@@ -18,14 +18,18 @@ Este framework nos proporciona un "esqueleto" sobre el cual trabajar y permite, 
 ## Pasos para iniciar el proyecto:
 
 1. Clonar el repositorio de manera recursiva `git clone --recurse-submodules https://github.com/willycotes/wpcotesframework.git`.
-2. Editar el archivo *.env.sample*, establecer los valores correctos de las variables de entorno y renombrarlo a ".env".
-1. Generar el archivo ".htaccess" en la raíz del proyecto ejecutando el archivo generate-htaccess.php.
-1. Ejecutar npm install y composer install para instalar todas las dependencias.
-1. Generar el .htaccess de la instalación de WordPress en WordPress-core/ con la herramienta WP_CLI ejecutando el comando "wp rewrite flush --hard". **Más detalles abajo.**
+2. Instalar todas las dependencias ejecutando el comando `composer install`.
+3. Editar el archivo *.env.sample* estableciendo los valores correctos de las variables de entorno y renombrarlo a *.env*.
+4. Generar el archivo *.htaccess* en la raíz del proyecto ejecutando el archivo *generate-htaccess.php*.
+5. Generar el *.htaccess* del núcleo de WordPress dentro del directorio *wordpress-core* con WP_CLI ejecutando el comando `wp rewrite flush --hard`.
+6. Verificar que todo este correcto y el sitio esté funcionando. Podemos seguir las siguientes sugerencias:
+	- Ejecutar el comando `wp config list`, para verificar que el archivo *wp-config.php* esté correctamente.
+	- Ejecutar el comando `wp dotenv list`, para verificar que el archivo *.env* esté cargado y las variables de entornos esten establecidas correctamente para su entorno. 
+	- Ejecutar el comando `wp db check`, para verificar la conexión con la base de datos.
 
-## Archivo de configuración de wordpress.
+## Archivo de configuración de WordPress.
 
-Esta instalación contiene una clase de configuracion personalizada, el cual, maneja las definiciones de las constantes del wp-config.php de wordpress a través de variables de entornos utilizando dotenv como dependencia, incluyendo el archivo específico según el entorno en el que estemos.
+Esta instalación contiene una clase de configuración personalizada, el cual, maneja las definiciones de las constantes del wp-config.php de WordPress a través de variables de entornos utilizando dotenv como dependencia, incluyendo el archivo específico según el entorno en el que estemos.
 
 ## WP CLI
 
@@ -43,7 +47,7 @@ Para utilizar correctamente la herramienta WP-CLI sobre este proyecto, se debe d
     @production:
       ssh: u989690031@156.67.72.1:65002~/domains/brandketings.com/public_html/
 
-1.  La opción "apache_modules" se configura para hacer posible la regeneración del archivo .htaccess de wordpress-core con WP-CLI a través del comando "wp rewrite reflush --hard".
+1.  La opción "apache_modules" se configura para hacer posible la regeneración del archivo *.htaccess* del núcleo de WordPress con WP-CLI a través del comando `wp rewrite flush --hard`.
 2.  Indicamos la ruta la instalación de wordpress, en este caso es "wordpress-core/".
 3.  Luego configuramos varios alias que corresponden a cada entorno que queremos que apunten nuestros comandos de WP_CLI.
 
