@@ -1,17 +1,27 @@
 <div align="center">
-	<p align="center"><img src="/wp-content/git/logos/logo-brandketings.png"></p>
-	<h1>Brandketing Solutions Website</h1>
-	<p>Website of Brandketing Solutions, made with Wordpress CMS and development by <a href="https://willycotes.github.io/willydev.com/">Willy Cotes</a> and teams.</p>
+	<h1>WPCotes Framework</h1>
+	<p>WPCotes Framework ofrece una estructura base para proyectos basados en WordPress que los programadores pueden usar, complementar o modificar según sus objetivos.
+Este framework nos proporciona un "esqueleto" sobre el cual trabajar y permite, principalmente, agilizar el proceso de desarrollo y facilitar el mantenimiento de nuestro sitio web, ya que podemos utilizar herramientas y reutilizar módulos en nuestros desarrollos.</p>
 	<br/>
 </div>
 
+## Beneficios que aporta WPCotes Framework
+
+* Configuraciones separadas por entorno.
+* Variables de entorno.
+* Núcleo de WordPress separado del contenido y gestionado a traves de git submodule.
+* Composer para administrar dependencias y plugins importantes recomendados para un buen proyecto web con WordPress.
+* Tema de inicio "WPCotesTheme" configurado por defecto.
+* Configuración para trabajar con WP-CLI y gestionar los diferentes entornos. Incorporación de nuevos comandos como "wp-cli dotenv" y "wp-cli htaccess(en desarrollo)".
+* Configuración para hacer deploy al servidor de producción a traves de GitHub Actions mediante SSH.
+
 ## Pasos para iniciar el proyecto:
 
-1. Clonar el repositorio y submodulos con "git clone recursive https://github.com/Brandketings/brandketings.com.git"
-1. Definir el .env file con los valores correspondientes para nuestro entorno, utilizando como ejemplo el archivo ".env.sample".
-1. Generar el .htaccess archivo en el root ejecutando el archivo generate-htaccess.php.
+1. Clonar el repositorio y submódulos con "git clone --recurse-submodules https://github.com/willycotes/wpcotesframework.git"
+2. Editar el archivo ".env.sample", establecer los valores correctos de las variables de entorno y renombrar el archivo a ".env".
+1. Generar el .htaccess archivo en la raíz del proyecto ejecutando el archivo generate-htaccess.php.
 1. Ejecutar npm install y composer install para instalar todas las dependencias.
-1. Generar el .htaccess de la instalación de wordpress en wordpress-core/ con la herramienta WP_CLI ejecutando el comando "wp rewrite flush --hard". **Más detalles abajo.**
+1. Generar el .htaccess de la instalación de WordPress en WordPress-core/ con la herramienta WP_CLI ejecutando el comando "wp rewrite flush --hard". **Más detalles abajo.**
 
 ## Archivo de configuración de wordpress.
 
@@ -19,7 +29,7 @@ Esta instalación contiene una clase de configuracion personalizada, el cual, ma
 
 ## WP CLI
 
-Para utilizar correctamente la herramienta WP-CLI sobre este proyecto, se debe de crear el archivo de configuracion "wp-cli.yml" de la siguiente manera:
+Para utilizar correctamente la herramienta WP-CLI sobre este proyecto, se debe de crear el archivo de configuración "wp-cli.yml" de la siguiente manera:
 
     apache_modules:
       - mod_rewrite
@@ -33,7 +43,7 @@ Para utilizar correctamente la herramienta WP-CLI sobre este proyecto, se debe d
     @production:
       ssh: u989690031@156.67.72.1:65002~/domains/brandketings.com/public_html/
 
-1.  La opción "apache_modules" se configura para hacer posible la regeneraración del archivo .htaccess de wordpress-core con WP-CLI a traves del comando "wp rewrite reflush --hard".
+1.  La opción "apache_modules" se configura para hacer posible la regeneración del archivo .htaccess de wordpress-core con WP-CLI a traves del comando "wp rewrite reflush --hard".
 2.  Indicamos la ruta la instalación de wordpress, en este caso es "wordpress-core/".
 3.  Luego configuramos varios alias que corresponden a cada entorno que queremos que apunten nuestros comandos de WP_CLI.
 
@@ -97,7 +107,7 @@ En todas las ramas anteriores se realiza el merge con la rama principal y la ram
 
 inmediatamente después de hacer el merge de una rama de version con la rama principal se debe etiquetar la rama principal con dicha version con el comando git tag -a version-number o con git tag -m para agregar un mensaje como con git commit.
 
-Si usamos git-flow y publicamos un release, debemos publicar los tags en el repositorio remoto con git push --tags ya que los comandos de git-flow ya nos crea la etiqueta automáticamente.
+Si usamos git-flow (herramienta CLI) y publicamos un release, debemos publicar los tags en el repositorio remoto con git push --tags ya que los comandos de git-flow ya nos crea la etiqueta automáticamente.
 
 La ramas feature se hace merge solo con la rama develop, asi si hay una rama release abierta, la funcionalidad debe esperar a su debido proceso para el proximo release, ya que antes de crear el release se analizo que ya era el momento de crearse ese lanzamiento con las funciones que ya estaban listas.
 
