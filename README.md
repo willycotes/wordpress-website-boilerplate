@@ -1,7 +1,7 @@
 <div align="center">
 	<h1>WPCotes Framework</h1>
 	<p>WPCotes Framework ofrece una estructura base para proyectos basados en WordPress que los programadores pueden usar, complementar o modificar según sus objetivos.
-Este framework nos proporciona un "esqueleto" sobre el cual trabajar y permite, principalmente, agilizar el proceso de desarrollo y facilitar el mantenimiento de nuestro sitio web, ya que podemos utilizar herramientas y reutilizar módulos en nuestros desarrollos.</p>
+Este framework nos proporciona un "esqueleto" sobre el cual trabajar y permite, principalmente, agilizar el proceso de desarrollo y facilitar el mantenimiento de nuestro sitio web, utilizando las configuraciones, herramientas y módulos incorporados en este framework en nuestros desarrollos.</p>
 	<br/>
 </div>
 
