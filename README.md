@@ -1,31 +1,31 @@
 <div align="center">
 	<h1>WPCotes Framework</h1>
 	<p>WPCotes Framework ofrece una estructura base para proyectos basados en WordPress que los programadores pueden usar, complementar o modificar según sus objetivos.
-Este framework nos proporciona un "esqueleto" sobre el cual trabajar y permite, principalmente, agilizar el proceso de desarrollo y facilitar el mantenimiento de nuestro sitio web, utilizando las configuraciones, herramientas y módulos incorporados en este framework en nuestros desarrollos.</p>
+Este framework nos proporciona un "esqueleto" sobre el cual trabajar y permite, principalmente, agilizar el proceso de desarrollo y facilitar el mantenimiento de nuestro sitio web, utilizando las configuraciones, herramientas y módulos incorporados, en nuestros desarrollos.</p>
 	<br/>
 </div>
 
-## Beneficios que aporta WPCotes Framework
+## Características de WPCotes Framework
 
 * Configuraciones separadas por entorno.
 * Variables de entorno.
-* Núcleo de WordPress separado del contenido y gestionado a traves de git submodule.
+* Núcleo de WordPress separado del contenido y gestionado a través de git submodule.
 * Composer para administrar dependencias y plugins importantes recomendados para un buen proyecto web con WordPress.
-* Tema de inicio "WPCotesTheme" configurado por defecto.
+* Tema de inicio "WPCotesTheme" instalado y configurado por defecto.
 * Configuración para trabajar con WP-CLI y gestionar los diferentes entornos. Incorporación de nuevos comandos como "wp-cli dotenv" y "wp-cli htaccess(en desarrollo)".
-* Configuración para hacer deploy al servidor de producción a traves de GitHub Actions mediante SSH.
+* Configuración para hacer deploy al servidor de producción a través de GitHub Actions mediante SSH.
 
 ## Pasos para iniciar el proyecto:
 
-1. Clonar el repositorio y submódulos con "git clone --recurse-submodules https://github.com/willycotes/wpcotesframework.git"
-2. Editar el archivo ".env.sample", establecer los valores correctos de las variables de entorno y renombrar el archivo a ".env".
-1. Generar el .htaccess archivo en la raíz del proyecto ejecutando el archivo generate-htaccess.php.
+1. Clonar el repositorio de manera recursiva `git clone --recurse-submodules https://github.com/willycotes/wpcotesframework.git`.
+2. Editar el archivo *.env.sample*, establecer los valores correctos de las variables de entorno y renombrarlo a ".env".
+1. Generar el archivo ".htaccess" en la raíz del proyecto ejecutando el archivo generate-htaccess.php.
 1. Ejecutar npm install y composer install para instalar todas las dependencias.
 1. Generar el .htaccess de la instalación de WordPress en WordPress-core/ con la herramienta WP_CLI ejecutando el comando "wp rewrite flush --hard". **Más detalles abajo.**
 
 ## Archivo de configuración de wordpress.
 
-Esta instalación contiene una clase de configuracion personalizada, el cual, maneja las definiciones de las constantes del wp-config.php de wordpress a traves de variables de entornos utilizando dotenv como dependencia, incluyendo el archivo específico según el entorno en el que estemos.
+Esta instalación contiene una clase de configuracion personalizada, el cual, maneja las definiciones de las constantes del wp-config.php de wordpress a través de variables de entornos utilizando dotenv como dependencia, incluyendo el archivo específico según el entorno en el que estemos.
 
 ## WP CLI
 
@@ -43,7 +43,7 @@ Para utilizar correctamente la herramienta WP-CLI sobre este proyecto, se debe d
     @production:
       ssh: u989690031@156.67.72.1:65002~/domains/brandketings.com/public_html/
 
-1.  La opción "apache_modules" se configura para hacer posible la regeneración del archivo .htaccess de wordpress-core con WP-CLI a traves del comando "wp rewrite reflush --hard".
+1.  La opción "apache_modules" se configura para hacer posible la regeneración del archivo .htaccess de wordpress-core con WP-CLI a través del comando "wp rewrite reflush --hard".
 2.  Indicamos la ruta la instalación de wordpress, en este caso es "wordpress-core/".
 3.  Luego configuramos varios alias que corresponden a cada entorno que queremos que apunten nuestros comandos de WP_CLI.
 
