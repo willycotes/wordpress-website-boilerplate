@@ -3,12 +3,12 @@
   RewriteCond %{HTTP:X-Forwarded-Proto} !https
   RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
   RewriteCond %{HTTP_HOST} ^(www.)?mysite.test$
-  RewriteCond %{REQUEST_URI} !^/wordpress-core/
+  RewriteCond %{REQUEST_URI} !^/wordpress/
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule ^(.*)$ /wordpress-core/$1
+  RewriteRule ^(.*)$ /wordpress/$1
   RewriteCond %{HTTP_HOST} ^(www.)?mysite.test$ 
-  RewriteRule ^(/)?$ wordpress-core/index.php [L] 
+  RewriteRule ^(/)?$ wordpress/index.php [L] 
 </IfModule>
 
 Options All -Indexes

@@ -1,11 +1,13 @@
 apache_modules:
   - mod_rewrite
   
-path: wordpress-core/
+path: wordpress/
+# server:
+#   docroot: web
 
 @staging:
   ssh: user@host/path/to/WordPress 
-  path: wordpress-core/
+  path: wordpress/
 
 @production:
   ssh: u989690031@156.67.72.1:65002~/domains/wpcotestheme.com/public_html/

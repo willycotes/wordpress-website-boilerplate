@@ -1,0 +1,11 @@
+apache_modules:
+  - mod_rewrite
+  
+path: C:/Users/Usuario/Local Sites/wpcotesframework/app/public/wordpress
+
+@staging:
+  ssh: user@host/path/to/WordPress 
+  path: wordpress/
+
+@production:
+  ssh: u989690031@156.67.72.1:65002~/domains/wpcotestheme.com/public_html/

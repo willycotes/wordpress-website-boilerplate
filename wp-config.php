@@ -1,4 +1,10 @@
 <?php
+
+// BEGIN iThemes Security - Do not modify or remove this line
+// iThemes Security Config Details: 2
+define( 'DISALLOW_FILE_EDIT', true ); // Disable File Editor - Security > Settings > WordPress Tweaks > File Editor
+// END iThemes Security - Do not modify or remove this line
+
 /**
  * The base configuration for WordPress
  *
@@ -18,20 +24,29 @@
  * @package WordPress
  */
 
-// Load class configuration with dotenv.
-require_once dirname( ABSPATH ) . '/includes/class-wp-config-dotenv.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
-WP_Config_Dotenv::load_config();
+// Load class configuration with dotenv.
+require_once __DIR__ . '/includes/class-wp-config.php';
+
+// WP_Config::dotenv_load_file();
+
+// WP_Config::apply_config();
+require_once __DIR__ . '/wp-config/wp-config-controller.php';
+
+
+// Management indexing
+// require_once dirname( ABSPATH ) . '/includes/disallow-indexing.php';
 
 // Support wp-cli with table prefix data base global variable.
-$table_prefix = TABLE_PREFIX ?? 'wp_';
+// $table_prefix = TABLE_PREFIX;
 
 /** Absolute path to the WordPress directory. */
 if ( ! defined( 'ABSPATH' ) ) {
-	define( 'ABSPATH', dirname( __FILE__ ) . '/wordpress-core/' );
+	define( 'ABSPATH', dirname( __FILE__ ) . '/wordpress/' );
 }
 
-// Support wp-cli.
+// Support wp-cli with wp-setting.phps.
 if ( ! function_exists( 'wp_unregister_GLOBALS' ) ) {
 	/** Sets up WordPress vars and included files. */
 	require_once ABSPATH . 'wp-settings.php';
