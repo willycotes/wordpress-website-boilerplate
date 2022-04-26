@@ -1,0 +1,14 @@
+/*!******************************************************************************************************************************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[3]!./sass/admin/plugin-install.scss ***!
+  \******************************************************************************************************************************************************************************************************************************/
+.sf-install-now.updating-message::before {
+  display: inline-block;
+  margin: 0 5px 0 -2px;
+  -webkit-animation: rotation 2s infinite linear;
+          animation: rotation 2s infinite linear;
+  font: 400 19px/1 dashicons;
+  vertical-align: bottom;
+  content: "\f463";
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY3NzL2FkbWluL3BsdWdpbi1pbnN0YWxsLmNzcyIsIm1hcHBpbmdzIjoiOzs7QUFBQTtFQUNFO0VBQ0E7RUFDQTtVQUFBO0VBQ0E7RUFDQTtFQUNBO0FBQ0YsQyIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL3Nhc3MvYWRtaW4vcGx1Z2luLWluc3RhbGwuc2NzcyJdLCJzb3VyY2VzQ29udGVudCI6WyIuc2YtaW5zdGFsbC1ub3cudXBkYXRpbmctbWVzc2FnZTo6YmVmb3JlIHtcclxuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgbWFyZ2luOiAwIDVweCAwIC0ycHg7XHJcbiAgYW5pbWF0aW9uOiByb3RhdGlvbiAycyBpbmZpbml0ZSBsaW5lYXI7XHJcbiAgZm9udDogNDAwIDE5cHgvMSBkYXNoaWNvbnM7XHJcbiAgdmVydGljYWwtYWxpZ246IGJvdHRvbTtcclxuICBjb250ZW50OiBcIlxcZjQ2M1wiO1xyXG59XHJcbiJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==*/

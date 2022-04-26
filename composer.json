@@ -26,11 +26,11 @@
 		},
   	"extra": {
     	"installer-paths": {
-      	"wp-content/mu-plugins/{$name}/": ["type:wordpress-muplugin", "wpackagist-plugin/better-wp-security"],
-      	"wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
-      	"wp-content/themes/{$name}/": ["type:wordpress-theme"]
+      	"app/wp-content/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+      	"app/wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
+      	"app/wp-content/themes/{$name}/": ["type:wordpress-theme"]
     	},
-    	"wordpress-install-dir": "wordpress"
+    	"wordpress-install-dir": "app/wordpress"
   	},
     "require": {
         "wpackagist-plugin/autoptimize": "^3.0",
@@ -39,7 +39,8 @@
         "wpackagist-plugin/ultimate-addons-for-gutenberg": "^1.25",
         "wpackagist-plugin/wordpress-seo": "^18.5",
         "roots/bedrock-autoloader": "^1.0",
-        "wpackagist-plugin/better-wp-security": "^8.1",
-        "roots/wordpress": "^5.9"
+        "roots/wordpress": "^5.9",
+        "vlucas/phpdotenv": "^5.4",
+        "willycotes/wp-config": "dev-main"
     }
 }

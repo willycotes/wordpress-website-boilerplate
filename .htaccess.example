@@ -1,0 +1,19 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+  RewriteCond %{HTTP_HOST} ^(www.)?mysite.test$
+  RewriteCond %{REQUEST_URI} !^/app/
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.*)$ /app/$1
+  RewriteCond %{HTTP_HOST} ^(www.)?mysite.test$ 
+  RewriteRule ^(/)?$ app/index.php [L]
+</IfModule>
+
+Options All -Indexes
+
+<Files ~ "(.env|.md|.git|wp-config.php|.json|.lock|.yml)$">
+	Order allow,deny
+	Deny from all
+</Files>

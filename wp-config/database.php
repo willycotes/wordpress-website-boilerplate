@@ -9,25 +9,25 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /** The name of the database for WordPress */
-WP_Config::define( 'DB_NAME', $_ENV['DB_NAME'] );
+define( 'DB_NAME', $_ENV['DB_NAME'] );
 
 /** MySQL database username */
-WP_Config::define( 'DB_USER', $_ENV['DB_USER'] );
+define( 'DB_USER', $_ENV['DB_USER'] );
 
 /** MySQL database password */
-WP_Config::define( 'DB_PASSWORD', $_ENV['DB_PASSWORD'] );
+define( 'DB_PASSWORD', $_ENV['DB_PASSWORD'] );
 
 /** MySQL hostname */
-WP_Config::define( 'DB_HOST', $_ENV['DB_HOST'] );
+define( 'DB_HOST', $_ENV['DB_HOST'] );
 
 /** Database Charset to use in creating database tables. */
-WP_Config::define( 'DB_CHARSET', 'utf8mb4' );
+define( 'DB_CHARSET', 'utf8mb4' );
 
 /** The Database Collate type. Don't change this if in doubt. */
-WP_Config::define( 'DB_COLLATE', '' );
+define( 'DB_COLLATE', '' );
 
 // table prefix database.
-$table_prefix = $_ENV['TABLE_PREFIX'] ;
+$table_prefix = $_ENV['TABLE_PREFIX'];
 
 /**#@+
  * Authentication Unique Keys and Salts.
@@ -43,11 +43,11 @@ $table_prefix = $_ENV['TABLE_PREFIX'] ;
  * Generate these using the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}
  *
  */
-WP_Config::define( 'AUTH_KEY', $_ENV['AUTH_KEY'] );
-WP_Config::define( 'SECURE_AUTH_KEY', $_ENV['SECURE_AUTH_KEY'] );
-WP_Config::define( 'LOGGED_IN_KEY', $_ENV['LOGGED_IN_KEY'] );
-WP_Config::define( 'NONCE_KEY', $_ENV['NONCE_KEY'] );
-WP_Config::define( 'AUTH_SALT', $_ENV['AUTH_SALT'] );
-WP_Config::define( 'SECURE_AUTH_SALT', $_ENV['SECURE_AUTH_SALT'] );
-WP_Config::define( 'LOGGED_IN_SALT', $_ENV['LOGGED_IN_SALT'] );
-WP_Config::define( 'NONCE_SALT', $_ENV['NONCE_SALT'] );
+define( 'AUTH_KEY', $_ENV['AUTH_KEY'] );
+define( 'SECURE_AUTH_KEY', $_ENV['SECURE_AUTH_KEY'] );
+define( 'LOGGED_IN_KEY', $_ENV['LOGGED_IN_KEY'] );
+define( 'NONCE_KEY', $_ENV['NONCE_KEY'] );
+define( 'AUTH_SALT', $_ENV['AUTH_SALT'] );
+define( 'SECURE_AUTH_SALT', $_ENV['SECURE_AUTH_SALT'] );
+define( 'LOGGED_IN_SALT', $_ENV['LOGGED_IN_SALT'] );
+define( 'NONCE_SALT', $_ENV['NONCE_SALT'] );

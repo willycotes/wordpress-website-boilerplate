@@ -3,9 +3,9 @@
 	"description": "My first packagist package",
 	"type": "wp-cli-package",
 	"require": {
-			"php": ">=5.3.0"
+			
 	},
-	"license": "mit",
+	"license": "MIT",
 	"authors": [
 			{
 					"name": "Willy Cotes",

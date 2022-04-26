@@ -1,7 +1,7 @@
 apache_modules:
   - mod_rewrite
   
-path: wordpress/
+path: app/wordpress/
 # server:
 #   docroot: web
 

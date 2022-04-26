@@ -1,0 +1,174 @@
+@import "../utils/mixins";
+
+/* stylelint-disable order/order */
+
+// color
+:root {
+  // color
+  @include defineColorHSL(--color-primary, 189, 89%, 40%);
+  // --color-primary: hsl(189, 89%, 40%);
+  @include defineColorHSL(--color-primary-high, 189, 89%, 35%);
+  // --color-primary-high: hsl(189, 89%, 35%);
+  @include defineColorHSL(--color-primary-higher, 189, 89%, 30%);
+  // --color-primary-higher: hsl(189, 89%, 30%);
+  @include defineColorHSL(--color-primary-low, 189, 89%, 50%);
+  // --color-primary-low: hsl(189, 89%, 50%);
+  @include defineColorHSL(--color-primary-lower, 189, 89%, 92%);
+  // --color-primary-lower: hsl(183, 100%, 92%);
+  @include defineColorHSL(--color-secondary, 48, 100%, 50%);
+  // --color-secondary: hsl(48, 100%, 50%);
+  @include defineColorHSL(--color-secondary-low, 48, 100%, 65%);
+  // --color-secondary-low: hsl(48, 100%, 65%);
+  @include defineColorHSL(--color-secondary-high, 48, 100%, 40%);
+  // --color-secondary-high: hsl(45, 100%, 40%);
+  @include defineColorHSL(--color-decorator, 317, 96%, 50%);
+  // --color-decorator: hsl(317, 96%, 50%);
+  @include defineColorHSL(--color-decorator-high, 317, 96%, 35%);
+  // --color-decorator-high: hsl(317, 96%, 35%);
+  @include defineColorHSL(--color-decorator-low, 317, 96%, 75%);
+  // --color-decorator-low: hsl(317, 96%, 75%);
+  @include defineColorHSL(--color-white, 0, 0%, 98%);
+  // --color-white: hsl(0, 0%, 98%);
+  @include defineColorHSL(--color-grey, 0, 0%, 50%);
+  // --color-grey: hsl(0, 0%, 50%);
+  @include defineColorHSL(--color-grey-low, 0, 0%, 75%);
+  // --color-grey-low: hsl(0, 0%, 75%);
+  @include defineColorHSL(--color-grey-lower, 0, 0%, 95%);
+  // --color-grey-lower: hsl(0, 0%, 95%);
+  @include defineColorHSL(--color-grey-high, 0, 0%, 40%);
+  // --color-grey-high: hsl(0, 0%, 40%);
+  @include defineColorHSL(--color-black, 0, 0%, 24%);
+  // --color-black: hsl(0, 0%, 24%);
+  @include defineColorHSL(--color-dark, 265, 100%, 6%);
+  // --color-dark: hsl(265, 100%, 6%);
+  @include defineColorHSL(--color-info, 205, 100%, 45%);
+  // --color-info: hsl(205, 100%, 45%);
+  @include defineColorHSL(--color-info-low, 205, 100%, 80%);
+  // --color-info-low: hsl(205, 100%, 80%);
+  @include defineColorHSL(--color-info-lower, 205, 100%, 95%);
+  // --color-info-lower: hsl(205, 100%, 95%);
+  @include defineColorHSL(--color-info-high, 205, 100%, 33%);
+  // --color-info-high: hsl(205, 100%, 33%);
+  @include defineColorHSL(--color-error, 11, 78%, 50%);
+  // --color-error: hsl(11, 78%, 50%);
+  @include defineColorHSL(--color-error-low, 11, 78%, 70%);
+  // --color-error-low: hsl(11, 78%, 70%);
+  @include defineColorHSL(--color-error-lower, 11, 78%, 90%);
+  // --color-error-lower: hsl(11, 78%, 90%);
+  @include defineColorHSL(--color-error-high, 11, 78%, 40%);
+  // --color-error-high: hsl(11, 78%, 40%);
+  @include defineColorHSL(--color-success, 121, 90%, 35%);
+  // --color-success: hsl(121, 90%, 35%);
+  @include defineColorHSL(--color-success-low, 121, 90%, 70%);
+  // --color-success-low: hsl(121, 90%, 70%);
+  @include defineColorHSL(--color-success-lower, 121, 90%, 95%);
+  // --color-success-lower: hsl(121, 90%, 95%);
+  @include defineColorHSL(--color-success-high, 121, 90%, 25%);
+  // --color-success-high: hsl(121, 90%, 25%);
+  @include defineColorHSL(--color-warning, 40, 100%, 50%);
+  // --color-warning: hsl(40, 100%, 50%);
+  @include defineColorHSL(--color-warning-low, 40, 100%, 65%);
+  // --color-warning-low: hsl(40, 100%, 65%);
+  @include defineColorHSL(--color-warning-lower, 40, 100%, 95%);
+  // --color-warning-lower: hsl(40, 100%, 95%);
+  @include defineColorHSL(--color-warning-high, 40, 100%, 40%);
+  // --color-warning-high: hsl(40, 100%, 40%);
+  // base
+  --font-family: arial, sans-serif;
+  --background-body: var(--color-white);
+  --color-text: var(--color-black);
+  --color-link: var(--color-primary);
+  --color-button: var(--color-primary);
+  --line-height-body: 1.4;
+  --line-height-heading: 1.2;
+  --line-height-button: 1.4;
+  --border-size: 2px;
+  --border-color: var(--color-grey-low);
+  --border-radius: 4px;
+  --border-button: 0.2em;
+  --box-shadow: 2px 2px 4px 0 hsl(0deg 0% 50%);
+  --z-back: -10;
+  --z-normal: 1;
+  --z-tooltips: 10;
+  --z-fixed: 100;
+  // font size
+  --text-size-base: 1rem;
+  --text-scale-ratio: 1.25;
+  // type scale
+  --text-md: calc(var(--text-size-base) * var(--text-scale-ratio)); // 20px
+  --text-lg: calc(var(--text-md) * var(--text-scale-ratio)); // 25px
+  --text-xl: calc(var(--text-lg) * var(--text-scale-ratio)); // 31.25px
+  --text-xxl: calc(var(--text-xl) * var(--text-scale-ratio)); // 39.06px
+  --text-xxxl: calc(var(--text-xxl) * var(--text-scale-ratio)); // 48.83px
+  --text-xxxxl: calc(var(--text-xxxl) * var(--text-scale-ratio)); // 61.04px
+  --text-sm: calc(var(--text-size-base) / var(--text-scale-ratio)); // 12.80 px
+  --text-xs: calc(var(--text-sm) / var(--text-scale-ratio)); // 10.24px
+  // scale spacing
+  --space-unit: 1em;
+  --space-xxxxs: calc(0.125 * var(--space-unit));
+  --space-xxxs: calc(0.25 * var(--space-unit));
+  --space-xxs: calc(0.375 * var(--space-unit));
+  --space-xs: calc(0.5 * var(--space-unit));
+  --space-sm: calc(0.75 * var(--space-unit));
+  --space-md: calc(1.25 * var(--space-unit));
+  --space-lg: calc(2 * var(--space-unit));
+  --space-xl: calc(3.25 * var(--space-unit));
+  --space-xxl: calc(5.25 * var(--space-unit));
+  --space-xxxl: calc(8.5 * var(--space-unit));
+  --space-xxxxl: calc(13.75 * var(--space-unit));
+  // max width
+  --max-width-xxxxs: 20rem; // ~320px
+  --max-width-xxxs: 26rem; // ~416px
+  --max-width-xxs: 32rem; // ~512px
+  --max-width-xs: 38rem; // ~608px
+  --max-width-sm: 48rem; // ~768px
+  --max-width-md: 64rem; // ~1024px
+  --max-width-lg: 75rem; // ~1200px
+  --max-width-xl: 90rem; // ~1440px
+  --max-width-xxl: 100rem; // ~1600px
+  --max-width-xxxl: 120rem; // ~1920px
+  --max-width-xxxxl: 150rem; // ~2400px
+
+  --max-width-content: 980px;
+  // padding
+  --padding-component: var(--space-md);
+}
+
+$breakpoints: (
+  /* X-Small devices (portrait phones, less than 576px)
+  No media query for `xs` since this is the default */
+    // ~512px / tablet
+  sm: 32rem,
+  // ~768px / tablet landscape orientation and laptop mini
+  md: 48rem,
+  // ~1024px / desktop
+  lg: 64rem,
+  // ~1280px / desktop xl
+  xl: 80rem
+);
+
+@include respond-to("sm") {
+  // tablet
+  :root {
+    // --text-size-base: 1.125rem;
+  }
+}
+@include respond-to("md") {
+  // tablet landscape
+  :root {
+    // --text-size-base: 1.125rem;
+  }
+}
+@include respond-to("lg") {
+  // desktop
+  :root {
+    --text-size-base: 1.125rem;
+  }
+}
+
+@include respond-to("xl") {
+  // desktop screen big
+  :root {
+    // --text-size-base: 1.25rem;
+  }
+}
