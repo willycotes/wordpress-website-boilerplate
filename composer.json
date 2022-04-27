@@ -41,6 +41,6 @@
         "roots/bedrock-autoloader": "^1.0",
         "roots/wordpress": "^5.9",
         "vlucas/phpdotenv": "^5.4",
-        "willycotes/wp-config": "dev-main"
+        "willycotes/wpcotes-config": "dev-main"
     }
 }

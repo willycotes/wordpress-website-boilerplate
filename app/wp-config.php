@@ -13,7 +13,7 @@ define( 'DISALLOW_FILE_EDIT', true ); // Disable File Editor - Security > Settin
 require_once dirname( __DIR__ ) . '/vendor/autoload.php';
 
 // Environment configuration controller
-require_once dirname( __DIR__ ) . '/wp-config/wp-config-controller.php';
+require_once dirname( __DIR__ ) . '/wp-config/wpcotes-config-controller.php';
 
 /** Absolute path to the WordPress directory. */
 defined( 'ABSPATH' ) || define( 'ABSPATH', __DIR__ . '/wordpress/' );

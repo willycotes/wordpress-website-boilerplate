@@ -202,10 +202,9 @@ Para crear un nuevo sitio web en wordpress, clonamos de manera recursiva el repo
 - [Composer](https://getcomposer.org/).
 - [WP-CLI](https://wp-cli.org/).
 - [WP-CLI Dotenv Command](https://aaemnnost.tv/wp-cli-commands/dotenv/).
-- [WP-CLI-CotesFramework](https://github.com/willycotes/wpcotesframework.git)
 - [Git](https://git-scm.com/).
 
-Este framework usa composer para administrar sus dependencias, complementos necesarios y el tema por defecto(WPCotesTheme).
+Este framework usa composer para administrar sus dependencias, complementos necesarios y el tema de inicio instalado y definido por defecto(WPCotesTheme).
 Varias de las dependencias son clases personalizadas que amplían alguna de las funcionalidades de WordPress.
 
 Dependencias personalizadas

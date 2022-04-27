@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3cb61b995bec34ead39a7f0d8c35ef46",
+    "content-hash": "f4375de68e864455a5ab68b48ee9d75f",
     "packages": [
         {
             "name": "composer/installers",
@@ -815,17 +815,17 @@
             "time": "2021-12-12T23:22:04+00:00"
         },
         {
-            "name": "willycotes/wp-config",
+            "name": "willycotes/wpcotes-config",
             "version": "dev-main",
             "source": {
                 "type": "git",
-                "url": "https://github.com/willycotes/wp-config.git",
-                "reference": "d105f006de25d3f39d3f3b2b456b7fdc25e5da81"
+                "url": "https://github.com/willycotes/wpcotes-config.git",
+                "reference": "fcbed2d178f462ffe7631ae4ccadcb7980f25e63"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/willycotes/wp-config/zipball/d105f006de25d3f39d3f3b2b456b7fdc25e5da81",
-                "reference": "d105f006de25d3f39d3f3b2b456b7fdc25e5da81",
+                "url": "https://api.github.com/repos/willycotes/wpcotes-config/zipball/fcbed2d178f462ffe7631ae4ccadcb7980f25e63",
+                "reference": "fcbed2d178f462ffe7631ae4ccadcb7980f25e63",
                 "shasum": ""
             },
             "require-dev": {
@@ -837,7 +837,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "WPConfig\\": "src/"
+                    "WPCotesConfig\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -851,12 +851,12 @@
                     "homepage": "https://willycotes.dev"
                 }
             ],
-            "description": "Class configuration for WordPress",
+            "description": "Class configuration for WPCotesFramework",
             "support": {
-                "issues": "https://github.com/willycotes/wp-config/issues",
-                "source": "https://github.com/willycotes/wp-config/tree/main"
+                "issues": "https://github.com/willycotes/wpcotes-config/issues",
+                "source": "https://github.com/willycotes/wpcotes-config/tree/main"
             },
-            "time": "2022-04-25T16:38:43+00:00"
+            "time": "2022-04-27T08:58:58+00:00"
         },
         {
             "name": "wpackagist-plugin/autoptimize",
@@ -875,24 +875,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/autoptimize/"
-        },
-        {
-            "name": "wpackagist-plugin/better-wp-security",
-            "version": "8.1.1",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/better-wp-security/",
-                "reference": "tags/8.1.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/better-wp-security.8.1.1.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/better-wp-security/"
         },
         {
             "name": "wpackagist-plugin/mailchimp-for-wp",
@@ -971,7 +953,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "willycotes/wp-config": 20
+        "willycotes/wpcotes-config": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
