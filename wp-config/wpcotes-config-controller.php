@@ -3,25 +3,19 @@
  * Environment configuration
  */
 
-use WPConfig\WPConfig;
-
 // prevent access directly.
 if ( ! defined( 'ABSPATH' ) ) {
   exit;
 }
 
-/**
- * Finding path .env file
- */
-$dotenv_dir = '';
-if ( file_exists( dirname( __DIR__ ) . '/.env' ) ) {
-	$dotenv_dir = dirname( __DIR__ );
-}
+$root_dir = dirname( __DIR__ );
 
 /**
  * Load environment vars in .env file
  */
-if ( $dotenv_dir !== '' ) {
+$dotenv_dir = file_exists( $root_dir . '/.env' ) ? $root_dir : ''; 
+
+if ( $dotenv_dir ) {
   $dotenv = Dotenv\Dotenv::createImmutable( $dotenv_dir );
 	$dotenv->safeLoad();
 } else {
@@ -37,7 +31,7 @@ defined( 'WP_ENVIRONMENT_TYPE' ) || define( 'WP_ENVIRONMENT_TYPE', $_ENV['WP_ENV
 define( 'WP_SITEURL', $_ENV['WP_SITEURL'] );
 define( 'WP_HOME', $_ENV['WP_HOME'] );
 define( 'WP_CONTENT_URL', WP_HOME. '/wp-content' );
-define( 'WP_CONTENT_DIR', dirname( __DIR__ ) . '/app/wp-content' );
+define( 'WP_CONTENT_DIR', $root_dir . '/app/wp-content' );
 
 // Control memory wordpress.
 define( 'WP_MEMORY_LIMIT', '128M' );
