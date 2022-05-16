@@ -1,6 +1,0 @@
-[submodule "wp-content/themes/wpcotestheme"]
-	path = wp-content/themes/wpcotestheme
-	url = https://github.com/willycotes/wpcotestheme.git
-[submodule "willycotes/wp-website-boilerplate-includes"]
-	path = includes
-	url = https://github.com/willycotes/wp-website-boilerplate-inc.git
