@@ -211,3 +211,21 @@ Dependencias personalizadas
 
 - **WPCotesFramework_config**, API que permite añadir los archivos de configuración de WordPress utilizando variables de entornos(Usa "dotenv" como dependencia).
 - ****
+
+* Configurar la
+
+WP_HOME- URL completa de la página de inicio de WordPress (https://example.com/)
+WP_SITEURL- URL completa de la instalación de WordPress (https://example.com/wordpress/)
+
+NOTA: WordPress esta configurado para crear el archivo *.htaccess* en la raiz del sitio y usa el valor de la constante WP_HOME para agregar las reglas de reescritura, por lo tanto, si definimos en el servidor el "DocumentRoot" apuntando a */path/to/site/app*, WordPress creará el archivo *.htaccess* en esa ubicación, con las reglas de reescritura correctas y la instalación funcionará correctamente.
+
+En cambio, si el DocumentRoot no apunta a */path/to/site/app*, tendremos que crear archivos *.htaccess* manualmente y definir las reglas de reescrituras que apunten al subdirectorio */app/* y que manejen las url correctamente de nuestro sitio. Esta configuración debe de tenerse especial cuidado de que WordPress no cree el archivo *.htaccess* en la raiz o agregue nuevas líneas a uno que ya esté creado, esto porque tendrán reglas de reescrituras incorrectas porque hemos cambiado la estructura y wordpress no es consciente de ello.
+
+Para evitar esto podemos cambiarle los permisos a nuestro *.htaccess* a solo lectura para nuestro servidor, y así WordPress no pueda modificarlo. Lo malo de esto es que ni WordPress, ni los plugin puneden agregar nuevas reglas, esto lo tendremos que hacer nosotros.
+Este tipo de estructuras personalizadas de instalaciones de WordPress normalmente se usan en hosting compartidos donde no tenemos accesos a las configuraciones del servidor, tambien a instalaciones muy personalizadas como por ejemplo: 
+
+- Un dominio con varios subdirectorios con instalaciones de WordPress diferentes.
+- Una Instalacion de WordPress en un subdirectorio de un proyecto que no esta hecho con WordPress, esto se usa comunmente cuando tenemos un proyecto y queremos habilitar un blog o una tienda especialmente hecho con WordPres.
+- Para procesos de desarrollos local o de staging, en el que queremos tener varias instalaciones de WordPress en un mismo dominio.
+
+Se incluyen achivos *.htaccess.sample* en el directorio raiz y en el subdirectorio *app/* para tener una muestra de como configurar correctamente y adaptarlas al proyecto.

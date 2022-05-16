@@ -4,20 +4,30 @@
 /vendor
 /.env
 
+# Core
+/app/wordpress/
+
 # Example themes
-/wp-content/themes/twenty*/
+/app/wp-content/themes/twenty*/
 
 # Example plugin
-/wp-content/plugins/hello.php
+/app/wp-content/plugins/hello.php
+/app/wp-content/autoptimize
+/app/wp-content/mailchimp-for-wp
+/app/wp-content/query-monitor
+/app/wp-content/ultimate-addons-for-gutenberg
+/app/wp-content/wordpress-seo
 
 # Uploads
-/wp-content/uploads/
+/app/wp-content/uploads/
+
 
 # Log files
 *.log
 
 # htaccess
 /.htaccess
+/app/.htaccess
 
 # All plugins
 #

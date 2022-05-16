@@ -1,0 +1,16 @@
+# Ejemplo de configuración para un sitio web en WordPress con una estructura de carpetas  personalizada 
+#El DocumentRoot del servidor debe de estar apuntando al directorio "/path/to/site/app".
+
+# En caso de que no podamos configurar el DocumenttRoot del servidor, tendremos que configurarlo nosotros mismos guiandose de la siguiente muestra.
+
+# RewriteBase y RewriteRule se define tomando la ruta desde la raiz del dominio(la carpeta publica definida como DocumentRoot en el servidor), hasta el subdirectorio "app/".
+
+# <IfModule mod_rewrite.c>
+# RewriteEngine On
+# RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+# RewriteBase /wpcotesframework/app/
+# RewriteRule ^index\.php$ - [L]
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule . /wpcotesframework/app/index.php [L]
+# </IfModule>
