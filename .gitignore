@@ -9,14 +9,18 @@
 
 # Example themes
 /app/wp-content/themes/twenty*/
+/app/wp-content/themes/astra
+/app/wp-content/themes/wpcotestheme
+
 
 # Example plugin
 /app/wp-content/plugins/hello.php
-/app/wp-content/autoptimize
-/app/wp-content/mailchimp-for-wp
-/app/wp-content/query-monitor
-/app/wp-content/ultimate-addons-for-gutenberg
-/app/wp-content/wordpress-seo
+/app/wp-content/plugin/autoptimize
+/app/wp-content/plugin/mailchimp-for-wp
+/app/wp-content/plugin/query-monitor
+/app/wp-content/plugin/ultimate-addons-for-gutenberg
+/app/wp-content/plugin/wordpress-seo
+/app/wp-content/plugin/wpcotes-helpers-css
 
 # Uploads
 /app/wp-content/uploads/

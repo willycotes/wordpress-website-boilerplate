@@ -30,7 +30,7 @@ defined( 'WP_ENVIRONMENT_TYPE' ) || define( 'WP_ENVIRONMENT_TYPE', $_ENV['WP_ENV
 // General define constant
 define( 'WP_SITEURL', $_ENV['WP_SITEURL'] );
 define( 'WP_HOME', $_ENV['WP_HOME'] );
-define( 'WP_CONTENT_URL', WP_HOME. '/wp-content' );
+define( 'WP_CONTENT_URL', WP_HOME. 'wp-content' );
 define( 'WP_CONTENT_DIR', $root_dir . '/app/wp-content' );
 
 // Control memory wordpress.
