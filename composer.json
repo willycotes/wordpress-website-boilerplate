@@ -1,0 +1,46 @@
+{
+    "name": "willycotes/wpcotesframework",
+    "description": "FrameWork para proyectos basados en WordPress, integrados con Git, Github Actions, Composer, WP-CLI, Variables de entorno y mas.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Willy Cotes",
+            "email": "willycotes@gmail.com"
+        }
+    ],
+		"repositories":[
+			{
+					"type":"composer",
+					"url":"https://wpackagist.org"
+			}
+		],
+		"minimum-stability": "dev",
+  	"prefer-stable": true,
+		"config": {
+			"optimize-autoloader": true,
+			"preferred-install": "dist",
+			"allow-plugins": {
+				"composer/installers": true,
+				"roots/wordpress-core-installer": true
+			}
+		},
+  	"extra": {
+    	"installer-paths": {
+      	"app/wp-content/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+      	"app/wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
+      	"app/wp-content/themes/{$name}/": ["type:wordpress-theme"]
+    	},
+    	"wordpress-install-dir": "app/wordpress"
+  	},
+    "require": {
+        "wpackagist-plugin/autoptimize": "^3.0",
+        "wpackagist-plugin/mailchimp-for-wp": "^4.8",
+        "wpackagist-plugin/query-monitor": "^3.9",
+        "wpackagist-plugin/ultimate-addons-for-gutenberg": "^1.25",
+        "wpackagist-plugin/wordpress-seo": "^18.5",
+        "roots/bedrock-autoloader": "^1.0",
+        "roots/wordpress": "^5.9",
+        "vlucas/phpdotenv": "^5.4",
+        "willycotes/wpcotes-config": "dev-main"
+    }
+}

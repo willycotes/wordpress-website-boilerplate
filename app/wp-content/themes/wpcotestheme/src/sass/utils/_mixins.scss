@@ -1,0 +1,138 @@
+@import "./functions";
+
+@mixin clearfix {
+  &::before,
+  &::after {
+    content: "";
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+@mixin screen-reader-text() {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  word-wrap: normal !important;
+  clip-path: inset(50%);
+  clip-path: inset(50%);
+}
+
+@mixin underlined-link() {
+  font-weight: 600;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+// Remove underline if element has a button class.
+@mixin remove-button-underline() {
+  &.button,
+  &.components-button:not(.is-link),
+  &.wp-block-button__link {
+    text-decoration: none;
+  }
+}
+
+@mixin wrap-break-word {
+  // Safari supports word-break.
+  -ms-word-break: break-all;
+  word-break: break-word;
+  // We also need word-wrap and for IE.
+  // https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-wrap
+  // https://developer.mozilla.org/en-US/docs/Web/CSS/word-break
+  // This is the current standard, works in most browsers.
+  overflow-wrap: anywhere;
+}
+
+//
+
+/* stylelint-disable max-nesting-depth */
+@mixin respond-to($breakpoint, $logic: false) {
+  $query: map-get($breakpoints, $breakpoint);
+  @if not $query {
+    @error "No se encuentra el valor de `#{breakpoint}`."
+    + 'Por favor, asegúrate que está definido en el mapa `$breakpoints`.';
+  }
+  @if ($logic) {
+    @media #{$logic} and (min-width: #{$query}) {
+      @content;
+    }
+  } @else {
+    @media (min-width: #{$query}) {
+      @content;
+    }
+  }
+}
+/* stylelint-enable max-nesting-depth */
+
+// event pseudoclass
+@mixin on-event {
+  &:hover,
+  &:active,
+  &:focus {
+    @content;
+  }
+}
+// Colors
+
+// --------------------------------
+
+// define HSL color variable
+@mixin defineColorHSL($color, $hue, $saturation, $lightness) {
+  #{$color}: unquote("hsl(#{$hue}, #{$saturation}, #{$lightness})");
+  #{$color}-h: #{$hue};
+  #{$color}-s: #{$saturation};
+  #{$color}-l: #{$lightness};
+}
+
+@mixin alert($color-border, $background-color) {
+  background-color: #{$background-color};
+  border: 2px solid #{$color-border};
+}
+@mixin button($color) {
+  color: var(--color-white);
+  background-color: var(#{$color});
+  border: var(--border-button) solid;
+  border-color: var(#{$color});
+  box-shadow: var(--box-shadow);
+  @include on-event {
+    color: var(--color-white);
+    background-color: unquote("var(#{$color}-high)");
+    border-color: transparent;
+  }
+
+  &:active,
+  &:focus {
+    box-shadow: 0 0 0 var(--border-button) unquote("var(#{$color}-low)");
+    // transform: translateY(4px);
+  }
+}
+@mixin button-line($color) {
+  color: var(#{$color});
+  background-color: transparent;
+  border: var(--border-button) solid;
+  border-color: var(#{$color});
+  box-shadow: var(--box-shadow);
+  @include on-event {
+    color: var(--color-white);
+    background-color: var(#{$color});
+    border-color: transparent;
+  }
+
+  &:active,
+  &:focus {
+    box-shadow: 0 0 0 var(--border-button) unquote("var(#{$color}-low)");
+    transform: translateY(4px);
+  }
+}

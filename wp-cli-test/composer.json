@@ -1,0 +1,22 @@
+{
+	"name": "willycotes/wp-cli-test",
+	"description": "My first packagist package",
+	"type": "wp-cli-package",
+	"require": {
+			
+	},
+	"license": "MIT",
+	"authors": [
+			{
+					"name": "Willy Cotes",
+					"email": "willycotes@gmail.com",
+					"homepage": "https://willycotes.dev"
+			}
+	],
+	"autoload": {
+		"psr-4": {
+			"WP_CLI\\CLITest\\": "src/"
+		},
+		"files": [ "command.php" ]
+	}
+}
