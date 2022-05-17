@@ -21,10 +21,10 @@ Este framework nos proporciona un "esqueleto" sobre el cual trabajar y permite, 
 1. Clonar el repositorio `git clone https://github.com/willycotes/wpcotesframework.git`.
 2. Instalar todas las dependencias del proyecto ejecutando el comando `composer install`.
 3. Editar el archivo *.env.sample* estableciendo los valores correctos de las variables de entorno y renombrar a *.env*.
-4. Editar el archivo *.htaccess.sample* en la raíz del proyecto estableciendo los valores correctos y renombrar a *.htaccess.
-5. Generar el *.htaccess* del núcleo de WordPress dentro del directorio *wordpress* con WP_CLI ejecutando el comando `wp rewrite flush --hard`.
-6. Revisar y activar todos los plugins instalados con `wp plugin activate --all`
-7. Verificar que toda la configuración este correcta y el sitio esté funcionando. Podemos seguir las siguientes sugerencias:
+4. Definir en el servidor el "DocumentRoot" apuntando a */path/to/site/app* y generar el archivo *.htaccess* de WordPress a través de WP_CLI ejecutando el comando `wp rewrite flush --hard`.
+	* **Nota:** En caso de que no podamos definir el DocumentRoot en nuestro servidor, podemos renombrar y editar los archivos *.htaccess.sample* ya incluidos, estableciendo las reglas de reescritura correctamente según la estructura del proyecto que tengamos o podemos adaptar ésta a la carpeta pública que tengamos, en este caso, tomaremos este directorio como si fuera nuestro subdirectorio *wpcotesframework/app/* y definimos esto en las configuraciones correspondientes. [ver más](https://github.com/willycotes/wpcotesframework/wiki#enlace-1).
+5. Revisar y activar plugins incluidos en la configuración con `wp plugin activate <plugin_ID>` o `wp plugin activate --all`
+6. Verificar que toda la configuración este correcta y el sitio esté funcionando. Podemos seguir las siguientes sugerencias:
 	- Ejecutar el comando `wp config list`, para verificar que el archivo *wp-config.php* esté correctamente.
 	- Ejecutar el comando `wp dotenv list`, para verificar que el archivo *.env* esté cargado y las variables de entornos estén establecidas correctamente para su entorno. 
 	- Ejecutar el comando `wp plugin list`, para verificar la lista de plugin instalados y activos.
@@ -217,7 +217,7 @@ Dependencias personalizadas
 WP_HOME- URL completa de la página de inicio de WordPress (https://example.com/)
 WP_SITEURL- URL completa de la instalación de WordPress (https://example.com/wordpress/)
 
-NOTA: WordPress esta configurado para crear el archivo *.htaccess* en la raiz del sitio y usa el valor de la constante WP_HOME para agregar las reglas de reescritura, por lo tanto, si definimos en el servidor el "DocumentRoot" apuntando a */path/to/site/app*, WordPress creará el archivo *.htaccess* en esa ubicación, con las reglas de reescritura correctas y la instalación funcionará correctamente.
+NOTA: WordPress esta configurado para crear el archivo *.htaccess* en la raiz del sitio y usa el valor de la constante WP_HOME para formar reglas de reescritura, por lo tanto, si definimos en el servidor el "DocumentRoot" apuntando a */path/to/site/app*, WordPress creará el archivo *.htaccess* en esa ubicación, con las reglas de reescritura correctas y la instalación funcionará correctamente.
 
 En cambio, si el DocumentRoot no apunta a */path/to/site/app*, tendremos que crear archivos *.htaccess* manualmente y definir las reglas de reescrituras que apunten al subdirectorio */app/* y que manejen las url correctamente de nuestro sitio. Esta configuración debe de tenerse especial cuidado de que WordPress no cree el archivo *.htaccess* en la raiz o agregue nuevas líneas a uno que ya esté creado, esto porque tendrán reglas de reescrituras incorrectas porque hemos cambiado la estructura y wordpress no es consciente de ello.
 
