@@ -5,6 +5,8 @@ Este framework nos proporciona un "esqueleto" sobre el cual trabajar y permite, 
 	<br/>
 </div>
 
+---------------------------------------
+
 ## Características de WPCotesFramework
 
 * Configuraciones separadas por entorno.
