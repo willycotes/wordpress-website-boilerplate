@@ -2,7 +2,6 @@
 	<h1>WPCotesFramework</h1>
 	<p>WPCotesFramework ofrece una estructura base para proyectos basados en WordPress que los programadores pueden usar, complementar o modificar según sus objetivos.
 Este framework nos proporciona un "esqueleto" sobre el cual trabajar y permite, principalmente, agilizar el proceso de desarrollo y facilitar el mantenimiento de nuestro sitio web, utilizando las configuraciones, herramientas y módulos incorporados, en nuestros desarrollos.</p>
-	<br/>
 </div>
 
 ---------------------------------------
