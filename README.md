@@ -194,7 +194,7 @@ wp plugin install show-single-variations-premium woo-variation-swatches-pro --ac
 - Plugin outside: plugin-yappi
 
 --------------------------
-Para crear un nuevo sitio web en wordpress, clonamos de manera recursiva el repositorio [wordpress-website-boilerplate](https://github.com/willycotes/wordpress-website-boilerplate.git) dentro de la carpeta vacia de nuestro proyecto, luego cambiamos la url remota origin por la url del nuevo repositorio de git de nuestro proyecto web que vayamos a desarrollar, a partir de allí, terminamos las configuraciones y empezamos a desarrollar.
+Para crear un nuevo sitio web en wordpress, clonamos de manera recursiva el repositorio [wpcotesframework](https://github.com/willycotes/wpcotesframework) dentro de la carpeta vacia de nuestro proyecto, luego cambiamos la url remota origin por la url del nuevo repositorio de git de nuestro proyecto web que vayamos a desarrollar, a partir de allí, terminamos las configuraciones y empezamos a desarrollar.
 
 # Requerimientos
 
